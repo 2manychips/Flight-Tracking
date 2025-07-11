@@ -54,7 +54,7 @@
       .then(geoData => {
         const tileLayer = L.geoJSON(geoData, {
           style: {
-            color: "gray",
+            color: "#f0f0f0",
             weight: 1,
             fillOpacity: 0.5
           }
@@ -73,11 +73,11 @@
                 const days = tileInfo.days_since_last_flight;
                 const maxDays = thresholds[group] ?? 7; // default to 7 if unknown group
 
-                let color = "green";
+                let color : "#31a354";
                 if (days > maxDays) {
-                  color = "red";
+                  color : "#de2d26";
                 } else if (days === maxDays) {
-                  color = "orange";
+                  color = "#fff7bc";
                 }
 
                 layer.setStyle({ fillColor: color, color: color });
