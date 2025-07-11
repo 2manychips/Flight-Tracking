@@ -73,11 +73,11 @@
                 const days = tileInfo.days_since_last_flight;
                 const maxDays = thresholds[group] ?? 7; // default to 7 if unknown group
 
-                let color : "#31a354";
+                let color : "green";
                 if (days > maxDays) {
-                  color : "#de2d26";
+                  color : "red";
                 } else if (days === maxDays) {
-                  color = "#fff7bc";
+                  color = "orange";
                 }
 
                 layer.setStyle({ fillColor: color, color: color });
