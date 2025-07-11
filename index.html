@@ -49,7 +49,7 @@
     };
 
     // Load tile polygons
-    fetch("tile_named.geojson")
+    fetch("tiles_named.geojson")
       .then(response => response.json())
       .then(geoData => {
         const tileLayer = L.geoJSON(geoData, {
