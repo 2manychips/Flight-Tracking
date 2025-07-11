@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Flight Tile Tracker</title>
+  <meta charset="utf-8" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <style>
+    body { margin: 0; font-family: sans-serif; }
+    #map { height: 100vh; width: 100vw; }
+    #legend {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background: white;
+      padding: 10px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="map"></div>
+
+  <div id="legend">
+    <strong>Legend</strong><br>
+    <span style="color: red;">&#9632;</span> Overdue<br>
+    <span style="color: orange;">&#9632;</span> 1 Day From Overdue<br>
+    <span style="color: green;">&#9632;</span> Within Tolerance
+  </div>
+
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+  <script>
+    const map = L.map("map").setView([56.2, -121.2], 13); // Change to your region
+
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      attribution: "&copy; OpenStreetMap contributors"
+    }).addTo(map);
+
+    // Set thresholds for each group
+    const thresholds = {
+      "3XWeekly": 3,
+      "Monthly": 30,
+      "Weekly": 7,
+      "BiWeekly": 14,
+      "Spexi_1week": 7,
+      "Spexi_2week": 14
+    };
+
+    // Load tile polygons
+    fetch("tiles.geojson")
+      .then(response => response.json())
+      .then(geoData => {
+        const tileLayer = L.geoJSON(geoData, {
+          style: {
+            color: "gray",
+            weight: 1,
+            fillOpacity: 0.5
+          }
+        }).addTo(map);
+
+        // Load flight data JSON
+        fetch("flight_tiles.json")
+          .then(response => response.json())
+          .then(flightData => {
+            tileLayer.eachLayer(layer => {
+              const tileName = layer.feature.properties.tile;
+              const tileInfo = flightData.find(t => t.tile === tileName);
+
+              if (tileInfo) {
+                const group = tileInfo.group;
+                const days = tileInfo.days_since_last_flight;
+                const maxDays = thresholds[group] ?? 7; // default to 7 if unknown group
+
+                let color = "green";
+                if (days > maxDays) {
+                  color = "red";
+                } else if (days === maxDays) {
+                  color = "orange";
+                }
+
+                layer.setStyle({ fillColor: color, color: color });
+
+                layer.bindPopup(`
+                  <strong>${tileInfo.tile}</strong><br>
+                  Group: ${tileInfo.group}<br>
+                  Days since last flight: ${days}<br>
+                  Limit: ${maxDays} days
+                `);
+              }
+            });
+          });
+      });
+  </script>
+
+</body>
+</html>

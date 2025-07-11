@@ -1,0 +1,217 @@
+[
+  {
+    "tile":"Lower L3",
+    "days_since_last_flight":23,
+    "group":"Monthly"
+  },
+  {
+    "tile":"L6 River Road",
+    "days_since_last_flight":6,
+    "group":"Monthly"
+  },
+  {
+    "tile":"Downstream R6",
+    "days_since_last_flight":10,
+    "group":"Monthly"
+  },
+  {
+    "tile":"MM Backchannel",
+    "days_since_last_flight":10,
+    "group":"Monthly"
+  },
+  {
+    "tile":"MM River",
+    "days_since_last_flight":30,
+    "group":"Monthly"
+  },
+  {
+    "tile":"MM Road",
+    "days_since_last_flight":10,
+    "group":"Monthly"
+  },
+  {
+    "tile":"MM Tip",
+    "days_since_last_flight":30,
+    "group":"Monthly"
+  },
+  {
+    "tile":"Septimus Siding West",
+    "days_since_last_flight":12,
+    "group":"Monthly"
+  },
+  {
+    "tile":"Area 20\/21",
+    "days_since_last_flight":18,
+    "group":"Monthly"
+  },
+  {
+    "tile":"Area 30",
+    "days_since_last_flight":24,
+    "group":"Monthly"
+  },
+  {
+    "tile":"Approach Channel",
+    "days_since_last_flight":5,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"Area 23",
+    "days_since_last_flight":5,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"Dam Core",
+    "days_since_last_flight":5,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"Diversion Tunnels",
+    "days_since_last_flight":5,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"DTOP to Memorial Bridge",
+    "days_since_last_flight":5,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"Garbage Creek",
+    "days_since_last_flight":8,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"LBEx",
+    "days_since_last_flight":8,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"R6",
+    "days_since_last_flight":8,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"RCC Buttress",
+    "days_since_last_flight":5,
+    "group":"3XWeekly"
+  },
+  {
+    "tile":"EFD Area of Interest",
+    "days_since_last_flight":14,
+    "group":"Special"
+  },
+  {
+    "tile":"P5 Stockpile",
+    "days_since_last_flight":23,
+    "group":"OtherFlightTracking"
+  },
+  {
+    "tile":"SPEXI_Area 2021",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_R6",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_RBDT",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_Spillway",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_Upstream Spillway",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"OBLIQUE_RCC Buttress",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_Drainage Channel",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_Area 25",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_Area A",
+    "days_since_last_flight":5,
+    "group":"Spexi_1week"
+  },
+  {
+    "tile":"SPEXI_Approach Channel",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Diversion Inlet Portal",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Diversion Outlet Portal",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Downstream Cofferdam",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Downstream Cofferdam #2",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_LBEx",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Right Bank",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"Spexi_Tailrace",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Upstream Cofferdam",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"SPEXI_Boat Ramp",
+    "days_since_last_flight":5,
+    "group":"Spexi_2week"
+  },
+  {
+    "tile":"Peace River",
+    "days_since_last_flight":5,
+    "group":"Weekly"
+  },
+  {
+    "tile":"Peace River Downstream",
+    "days_since_last_flight":11,
+    "group":"Weekly"
+  },
+  {
+    "tile":"Area 25",
+    "days_since_last_flight":17,
+    "group":"Weekly"
+  }
+]
