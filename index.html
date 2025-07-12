@@ -65,7 +65,7 @@
           .then(response => response.json())
           .then(flightData => {
             tileLayer.eachLayer(layer => {
-              const tileName = layer.feature.properties.tile;
+              const name = layer.feature.properties.tile;
               const tileInfo = flightData.find(t => t.tile === name);
 
               if (tileInfo) {
@@ -79,6 +79,12 @@
                 } else if (days === maxDays) {
                   color = "orange";
                 }
+				
+				    layer.setStyle({
+					   fill: true,
+                       fillColor: color,
+                       color: color
+					});
 
                 layer.setStyle({ fillColor: color, color: color });
 
