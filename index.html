@@ -32,16 +32,15 @@
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
   <script>
-    const map = L.map("map").setView([56.1936, -120.9077], 13); // Change to your region
+    const map = L.map("map").setView([56.1936, -120.9077], 13);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
 
-    // Set thresholds for each group
     const thresholds = {
       "3XWeekly": 3,
-	  "Quarterly": 90,
+      "Quarterly": 90,
       "Monthly": 30,
       "Weekly": 7,
       "BiWeekly": 14,
@@ -49,55 +48,42 @@
       "Spexi_2week": 14
     };
 
-    // Load tile polygons
     fetch("merged_tiles.geojson")
       .then(response => response.json())
       .then(geoData => {
-        const tileLayer = L.geoJSON(geoData, {
-          style: {
-            color : "grey",
-            weight: 1,
-            fillOpacity: 0.5
+        L.geoJSON(geoData, {
+          style: feature => {
+            const group = feature.properties.group;
+            const days = feature.properties.days_since_last_flight;
+            const maxDays = thresholds[group] ?? 90;
+
+            let color = "green";
+            if (days > maxDays) {
+              color = "red";
+            } else if (days === maxDays) {
+              color = "orange";
+            }
+
+            return {
+              fillColor: color,
+              color: color,
+              weight: 1,
+              fillOpacity: 0.5
+            };
+          },
+          onEachFeature: (feature, layer) => {
+            const group = feature.properties.group;
+            const days = feature.properties.days_since_last_flight;
+            const maxDays = thresholds[group] ?? 90;
+
+            layer.bindPopup(`
+              <strong>${feature.properties.tile}</strong><br>
+              Group: ${group}<br>
+              Days since last flight: ${days}<br>
+              Limit: ${maxDays} days
+            `);
           }
         }).addTo(map);
-
-        // Load flight data JSON
-        fetch("tracking.json")
-          .then(response => response.json())
-          .then(flightData => {
-            tileLayer.eachLayer(layer => {
-              const name = layer.feature.properties.tile;
-              const tileInfo = flightData.find(t => t.tile === name);
-
-              if (tileInfo) {
-                const group = tileInfo.group;
-                const days = tileInfo.days_since_last_flight;
-                const maxDays = thresholds[group]?? 90; // default to 7 if unknown group
-
-                let color = "green";
-                if (days > maxDays) {
-                  color = "red";
-                } else if (days === maxDays) {
-                  color = "orange";
-                }
-				
-				    layer.setStyle({
-					   fill: true,
-                       fillColor: color,
-                       color: color
-					});
-
-                layer.setStyle({ fillColor: color, color: color });
-
-                layer.bindPopup(`
-                  <strong>${tileInfo.tile}</strong><br>
-                  Group: ${tileInfo.group}<br>
-                  Days since last flight: ${days}<br>
-                  Limit: ${maxDays} days
-                `);
-              }
-            });
-          });
       });
   </script>
 
