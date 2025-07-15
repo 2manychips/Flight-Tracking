@@ -48,43 +48,59 @@
       "Spexi_2week": 14
     };
 
-    fetch("merged_tiles.geojson")
-      .then(response => response.json())
-      .then(geoData => {
-        L.geoJSON(geoData, {
-          style: feature => {
-            const group = feature.properties.group;
-            const days = feature.properties.days_since_last_flight;
-            const maxDays = thresholds[group] ?? 90;
+   fetch("merged_tiles.geojson")
+  .then(response => response.json())
+  .then(geoData => {
+    L.geoJSON(geoData, {
+      style: feature => {
+        const group = feature.properties.group;
+        const days = feature.properties.days_since_last_flight;
 
-            let color = "green";
-            if (days > maxDays) {
-              color = "red";
-            } else if (days === maxDays) {
-              color = "orange";
-            }
+        if (group == null || days == null) {
+          return {
+            fillColor: "gray",
+            color: "gray",
+            weight: 1,
+            fillOpacity: 0.3
+          };
+        }
 
-            return {
-              fillColor: color,
-              color: color,
-              weight: 1,
-              fillOpacity: 0.5
-            };
-          },
-          onEachFeature: (feature, layer) => {
-            const group = feature.properties.group;
-            const days = feature.properties.days_since_last_flight;
-            const maxDays = thresholds[group] ?? 90;
+        const maxDays = thresholds[group] ?? 90;
 
-            layer.bindPopup(`
-              <strong>${feature.properties.tile}</strong><br>
-              Group: ${group}<br>
-              Days since last flight: ${days}<br>
-              Limit: ${maxDays} days
-            `);
-          }
-        }).addTo(map);
-      });
+        let color = "green";
+        if (days > maxDays) {
+          color = "red";
+        } else if (days === maxDays) {
+          color = "orange";
+        }
+
+        return {
+          fillColor: color,
+          color: color,
+          weight: 1,
+          fillOpacity: 0.5
+        };
+      },
+      onEachFeature: (feature, layer) => {
+        const tile = feature.properties.tile;
+        const group = feature.properties.group;
+        const days = feature.properties.days_since_last_flight;
+
+        if (group == null || days == null) {
+          layer.bindPopup(`<strong>${tile}</strong><br>No flight data available.`);
+        } else {
+          const maxDays = thresholds[group] ?? 90;
+          layer.bindPopup(`
+            <strong>${tile}</strong><br>
+            Group: ${group}<br>
+            Days since last flight: ${days}<br>
+            Limit: ${maxDays} days
+          `);
+        }
+      }
+    }).addTo(map);
+  });
+
   </script>
 
 </body>
