@@ -1,217 +1,347 @@
 [
   {
     "tile":"Lower L3",
-    "days_since_last_flight":23,
+    "days_since_last_flight":34,
     "group":"Monthly"
   },
   {
     "tile":"L6 River Road",
-    "days_since_last_flight":6,
+    "days_since_last_flight":17,
     "group":"Monthly"
   },
   {
     "tile":"Downstream R6",
-    "days_since_last_flight":10,
+    "days_since_last_flight":21,
     "group":"Monthly"
   },
   {
     "tile":"MM Backchannel",
-    "days_since_last_flight":10,
+    "days_since_last_flight":21,
     "group":"Monthly"
   },
   {
     "tile":"MM River",
-    "days_since_last_flight":30,
+    "days_since_last_flight":41,
     "group":"Monthly"
   },
   {
     "tile":"MM Road",
-    "days_since_last_flight":10,
+    "days_since_last_flight":21,
     "group":"Monthly"
   },
   {
     "tile":"MM Tip",
-    "days_since_last_flight":30,
+    "days_since_last_flight":41,
     "group":"Monthly"
   },
   {
     "tile":"Septimus Siding West",
-    "days_since_last_flight":12,
+    "days_since_last_flight":23,
     "group":"Monthly"
   },
   {
-    "tile":"Area 20\/21",
-    "days_since_last_flight":18,
+    "tile":"Area 2021",
+    "days_since_last_flight":29,
     "group":"Monthly"
   },
   {
     "tile":"Area 30",
-    "days_since_last_flight":24,
+    "days_since_last_flight":35,
     "group":"Monthly"
   },
   {
+    "tile":"Upper L3",
+    "days_since_last_flight":48,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Area 11 Viewpoint",
+    "days_since_last_flight":17,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Area 28",
+    "days_since_last_flight":18,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Area 29",
+    "days_since_last_flight":18,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"ATCO",
+    "days_since_last_flight":18,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Conveyor North",
+    "days_since_last_flight":50,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Conveyor South",
+    "days_since_last_flight":50,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Gate B",
+    "days_since_last_flight":27,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Gate C",
+    "days_since_last_flight":18,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Microwave Tower",
+    "days_since_last_flight":18,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Substation",
+    "days_since_last_flight":29,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Transmission",
+    "days_since_last_flight":52,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"Area E",
+    "days_since_last_flight":250,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"85th Ave",
+    "days_since_last_flight":254,
+    "group":"Quarterly"
+  },
+  {
+    "tile":"L5",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"R5a",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"R5b",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Peace River Upstream",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Aggregate Area",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Area 24",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Area 24 Tip",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Area A East",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Crusher",
+    "days_since_last_flight":29,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Area 27 Howe Pit",
+    "days_since_last_flight":27,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"L3 Gully",
+    "days_since_last_flight":30,
+    "group":"BiWeekly"
+  },
+  {
+    "tile":"Septimus Hill",
+    "days_since_last_flight":30,
+    "group":"BiWeekly"
+  },
+  {
     "tile":"Approach Channel",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"3XWeekly"
   },
   {
     "tile":"Area 23",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"3XWeekly"
   },
   {
     "tile":"Dam Core",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"3XWeekly"
   },
   {
     "tile":"Diversion Tunnels",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"3XWeekly"
   },
   {
     "tile":"DTOP to Memorial Bridge",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"3XWeekly"
   },
   {
     "tile":"Garbage Creek",
-    "days_since_last_flight":8,
+    "days_since_last_flight":19,
     "group":"3XWeekly"
   },
   {
     "tile":"LBEx",
-    "days_since_last_flight":8,
+    "days_since_last_flight":19,
     "group":"3XWeekly"
   },
   {
     "tile":"R6",
-    "days_since_last_flight":8,
+    "days_since_last_flight":19,
     "group":"3XWeekly"
   },
   {
     "tile":"RCC Buttress",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"3XWeekly"
   },
   {
     "tile":"EFD Area of Interest",
-    "days_since_last_flight":14,
+    "days_since_last_flight":25,
     "group":"Special"
   },
   {
     "tile":"P5 Stockpile",
-    "days_since_last_flight":23,
+    "days_since_last_flight":34,
     "group":"OtherFlightTracking"
   },
   {
     "tile":"SPEXI_Area 2021",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_R6",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_RBDT",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_Spillway",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_Upstream Spillway",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"OBLIQUE_RCC Buttress",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_Drainage Channel",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_Area 25",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_Area A",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_1week"
   },
   {
     "tile":"SPEXI_Approach Channel",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Diversion Inlet Portal",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Diversion Outlet Portal",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Downstream Cofferdam",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Downstream Cofferdam #2",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_LBEx",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Right Bank",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"Spexi_Tailrace",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Upstream Cofferdam",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"SPEXI_Boat Ramp",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Spexi_2week"
   },
   {
     "tile":"Peace River",
-    "days_since_last_flight":5,
+    "days_since_last_flight":16,
     "group":"Weekly"
   },
   {
     "tile":"Peace River Downstream",
-    "days_since_last_flight":11,
+    "days_since_last_flight":22,
     "group":"Weekly"
   },
   {
     "tile":"Area 25",
-    "days_since_last_flight":17,
+    "days_since_last_flight":28,
     "group":"Weekly"
   }
 ]
