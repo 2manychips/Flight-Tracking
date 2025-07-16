@@ -68,9 +68,9 @@
         const maxDays = thresholds[group] ?? 90;
 
         let color = "green";
-        if (days > maxDays - 2) {
+        if (days > maxDays) {
           color = "red";
-        } else if (days <= maxDays) {
+        } else if (days >= maxDays - 2) {
           color = "orange";
         }
 
