@@ -53,8 +53,13 @@
   .then(geoData => {
     L.geoJSON(geoData, {
       style: feature => {
+        // This still applies to polygons
         const group = feature.properties.group;
         const days = feature.properties.days_since_last_flight;
+
+        if (feature.geometry.type !== "Polygon" && feature.geometry.type !== "MultiPolygon") {
+          return {}; // skip styling for points
+        }
 
         if (group == null || days == null) {
           return {
@@ -81,6 +86,32 @@
           fillOpacity: 0.5
         };
       },
+
+      pointToLayer: (feature, latlng) => {
+        const group = feature.properties.group;
+        const days = feature.properties.days_since_last_flight;
+
+        const maxDays = thresholds[group] ?? 90;
+
+        let color = "green";
+        if (group == null || days == null) {
+          color = "gray";
+        } else if (days >= maxDays) {
+          color = "red";
+        } else if (days > maxDays - 2) {
+          color = "orange";
+        }
+
+        return L.circleMarker(latlng, {
+          radius: 8,
+          fillColor: color,
+          color: "#000",
+          weight: 1,
+          opacity: 1,
+          fillOpacity: 0.8
+        });
+      },
+
       onEachFeature: (feature, layer) => {
         const tile = feature.properties.tile;
         const group = feature.properties.group;
@@ -100,6 +131,7 @@
       }
     }).addTo(map);
   });
+
 
   </script>
 
