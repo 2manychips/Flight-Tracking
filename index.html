@@ -35,14 +35,6 @@
   <script>
     const map = L.map("map").setView([56.1936, -120.9077], 13);
 	
-	L.control.Legend({
-    position: "bottomleft",
-    legends: [{
-        label: "Marker1",
-        type: "image",
-        url: "marker/marker-red.png",
-    }]
-	}).addTo(map);
 
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors"
