@@ -5,19 +5,28 @@
   <meta charset="utf-8" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
   <style>
-    body { margin: 0; font-family: sans-serif; }
-    #map { height: 100vh; width: 100vw; }
-    #legend {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background: white;
-      padding: 10px;
-      border: 1px solid #ccc;
-      font-size: 14px;
-	  z-index: 1000;
-    }
-  </style>
+  body { margin: 0; font-family: sans-serif; }
+  #map { height: 100vh; width: 100vw; }
+
+  .legend {
+    background: white;
+    padding: 10px;
+    line-height: 1.4em;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    z-index: 1000;
+  }
+
+  .legend i {
+    width: 14px;
+    height: 14px;
+    float: left;
+    margin-right: 8px;
+    opacity: 0.7;
+    background: gray;
+  }
+</style>
+  
 </head>
 <body>
 
@@ -39,6 +48,20 @@
     L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
       attribution: "&copy; OpenStreetMap contributors"
     }).addTo(map);
+	
+	  const legend = L.control({ position: "bottomleft" });
+
+	legend.onAdd = function (map) {
+		const div = L.DomUtil.create("div", "legend");
+		div.innerHTML += "<strong>Legend</strong><br>";
+		div.innerHTML += '<i style="background: red"></i> Overdue<br>';
+		div.innerHTML += '<i style="background: orange"></i> 3 Days Or Less From Overdue<br>';
+		div.innerHTML += '<i style="background: green"></i> Within Tolerance<br>';
+		div.innerHTML += '<span class="legend-circle"></span> SPEXI Flight Point<br>'
+		return div;
+	};
+
+	legend.addTo(map)
 
     const thresholds = {
       "3XWeekly": 3,
@@ -49,6 +72,8 @@
       "Spexi_1week": 7,
       "Spexi_2week": 14
     };
+	
+	
 
    fetch("merged_tiles2.geojson")
   .then(response => response.json())
