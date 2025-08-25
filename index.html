@@ -128,7 +128,7 @@
       pointToLayer: (feature, latlng) => {
         const group = feature.properties.group;
         const days = feature.properties.days_since_last_flight;
-		const last updated = feature.properties.last_updated;
+		const lastupdated = feature.properties.last_updated;
 
         const maxDays = thresholds[group] ?? 90;
 
@@ -155,6 +155,7 @@
         const tile = feature.properties.tile;
         const group = feature.properties.group;
         const days = feature.properties.days_since_last_flight;
+		const lastupdated = feature.properties.last_updated;
 
         if (group == null || days == null) {
           layer.bindPopup(`<strong>${tile}</strong><br>No flight data available.`);
